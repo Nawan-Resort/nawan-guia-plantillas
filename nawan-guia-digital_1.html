@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Atención Digital — Nawan Resort Serrano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1c2b4a;
+    --navy-mid: #243459;
+    --navy-light: #2e4070;
+    --gold: #b89660;
+    --gold-light: #d4b483;
+    --gold-pale: #f0e6d0;
+    --cream: #f7f2ea;
+    --cream-dark: #ede5d4;
+    --cream-border: #ddd0b8;
+    --white: #ffffff;
+    --text: #1c2b4a;
+    --muted: #6b7a99;
+    --muted-light: #9aa3b8;
+    --success: #2e7d4f;
+    --success-bg: #eaf4ee;
+    --warn: #7a5c1e;
+    --warn-bg: #fdf5e6;
+    --danger: #8b2020;
+    --danger-bg: #fdf0f0;
+    --wsp-color: #1a6b3c;
+    --wsp-bg: #e8f5ee;
+    --pdf-color: #1a3a6b;
+    --pdf-bg: #e8eef7;
+    --mail-color: #7a3a00;
+    --mail-bg: #fef0e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .brand-mark span {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .brand-text { line-height: 1.2; }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  .brand-sub { font-size: 10px; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; }
+  .header-badge {
+    font-size: 10px;
+    color: var(--gold-light);
+    border: 1px solid rgba(184,150,96,0.35);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 60px solid rgba(184,150,96,0.07);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 40px solid rgba(184,150,96,0.05);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero-title em { color: var(--gold-light); font-style: italic; }
+  .hero-divider {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+  }
+  .hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(184,150,96,0.25);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .hero-stat {
+    flex: 1;
+    min-width: 120px;
+    padding: 14px 20px;
+    border-right: 1px solid rgba(184,150,96,0.2);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* NAV */
+  .main-nav {
+    background: var(--navy-mid);
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+  }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav-btn:hover { color: var(--gold-light); }
+  .nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* CONTENT */
+  .content { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* SECTIONS */
+  .section { display: none; padding-top: 40px; }
+  .section.active { display: block; }
+
+  .section-header { margin-bottom: 28px; }
+  .section-eyebrow {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--navy);
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 640px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cream-border);
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .card-accent-navy { border-left: 4px solid var(--navy); }
+  .card-accent-gold { border-left: 4px solid var(--gold); }
+  .card-accent-green { border-left: 4px solid #3a7a56; }
+  .card-accent-red { border-left: 4px solid #b03a3a; }
+
+  .card-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .card p + p { margin-top: 8px; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .tag-wsp { background: var(--wsp-bg); color: var(--wsp-color); }
+  .tag-pdf { background: var(--pdf-bg); color: var(--pdf-color); }
+  .tag-mail { background: var(--mail-bg); color: var(--mail-color); }
+
+  /* CANAL BLOCKS */
+  .canal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .canal-card {
+    background: var(--white);
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .canal-header {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--cream-border);
+  }
+  .canal-icon-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .canal-icon {
+    width: 38px; height: 38px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .canal-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    opacity: 0.15;
+    font-weight: 600;
+  }
+  .canal-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .canal-sub { font-size: 11px; color: var(--muted); }
+  .canal-body { padding: 12px 18px 16px; }
+  .canal-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .exclusion-box {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 20px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 8px;
+  }
+  .exclusion-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(184,150,96,0.15);
+    border: 1px solid rgba(184,150,96,0.3);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+  .exclusion-text { flex: 1; }
+  .exclusion-title { font-size: 12px; color: var(--gold-light); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .exclusion-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+  .exclusion-desc strong { color: var(--gold-light); font-weight: 500; }
+
+  /* PLANTILLAS ACCORDION */
+  .plantilla-group { margin-bottom: 28px; }
+  .plantilla-group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cream-border);
+  }
+  .group-icon {
+    width: 30px; height: 30px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .group-title { font-size: 14px; font-weight: 500; color: var(--navy); }
+  .group-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+  .plantilla-item {
+    background: var(--white);
+    border: 1px solid var(--cream-border);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .plantilla-item:hover { border-color: var(--gold); }
+  .plantilla-item.open { border-color: var(--gold); }
+
+  .plantilla-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .p-num {
+    width: 26px; height: 26px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .p-info { flex: 1; }
+  .p-name { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+  .p-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .p-arrow {
+    color: var(--gold);
+    font-size: 16px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .plantilla-item.open .p-arrow { transform: rotate(90deg); }
+
+  .plantilla-body {
+    display: none;
+    padding: 0 16px 16px 54px;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .plantilla-item.open .plantilla-body { display: block; }
+
+  .p-detail { padding-top: 14px; }
+  .p-row { margin-bottom: 10px; }
+  .p-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-light); margin-bottom: 3px; }
+  .p-value { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .p-note {
+    background: var(--warn-bg);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--warn);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* STEPS */
+  .step-list { margin-top: 8px; }
+  .step {
+    display: flex;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--cream-border);
+    align-items: flex-start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 32px; height: 32px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-content { flex: 1; }
+  .step-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .step-tip {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--warn);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .step-warning {
+    background: var(--danger-bg);
+    border-left: 3px solid #c0392b;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--danger);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* ALERT BOXES */
+  .alert {
+    border-radius: 6px;
+    padding: 16px 18px;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .alert-gold {
+    background: var(--warn-bg);
+    border: 1px solid #e8d090;
+    border-left: 4px solid var(--gold);
+    color: var(--warn);
+  }
+  .alert-danger {
+    background: var(--danger-bg);
+    border: 1px solid #f0c0c0;
+    border-left: 4px solid #c0392b;
+    color: var(--danger);
+  }
+  .alert-success {
+    background: var(--success-bg);
+    border: 1px solid #a8d8b8;
+    border-left: 4px solid var(--success);
+    color: var(--success);
+  }
+  .alert strong { display: block; font-weight: 500; margin-bottom: 4px; }
+
+  /* RULES GRID */
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .rule-item {
+    background: var(--white);
+    border: 1px solid var(--cream-border);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .rule-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 6px; }
+  .rule-val { font-size: 13px; color: var(--text); line-height: 1.5; }
+
+  /* ESCALATION TABLE */
+  .esc-list { margin-top: 8px; }
+  .esc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 13px;
+  }
+  .esc-item:last-child { border-bottom: none; }
+  .esc-dot {
+    width: 8px; height: 8px;
+    background: #c0392b;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .esc-text { color: var(--text); line-height: 1.5; }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .footer-inner { max-width: 900px; margin: 0 auto; }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .footer-sub { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
+  .footer-divider { width: 32px; height: 1px; background: var(--gold); opacity: 0.4; margin: 12px auto; }
+  .footer-credits { font-size: 11px; color: rgba(255,255,255,0.25); }
+  .footer-credits span { color: var(--gold-light); opacity: 0.6; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero-stats { flex-direction: column; }
+    .hero-stat { border-right: none; border-bottom: 1px solid rgba(184,150,96,0.2); }
+    .hero-stat:last-child { border-bottom: none; }
+    .canal-grid { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .plantilla-body { padding-left: 16px; }
+    .nav-btn { padding: 14px 14px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="brand-mark"><span>N</span></div>
+      <div class="brand-text">
+        <div class="brand-name">Nawan</div>
+        <div class="brand-sub">Resort Serrano</div>
+      </div>
+    </div>
+    <div class="header-badge">Guía Interna</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Equipo de Recepción · 2025</p>
+  <h1 class="hero-title">Guía de <em>Atención Digital</em></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">Manual de uso de plantillas para comunicaciones con huéspedes. Todos los canales, todas las situaciones.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="stat-num">26</span>
+      <span class="stat-label">Plantillas</span>
+    </div>
+    <div class="hero-stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Canales</span>
+    </div>
+    <div class="hero-stat">
+      <span class="stat-num">11</span>
+      <span class="stat-label">Situaciones</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('intro')">Inicio</button>
+    <button class="nav-btn" onclick="showSection('canales')">Los canales</button>
+    <button class="nav-btn" onclick="showSection('plantillas')">Plantillas</button>
+    <button class="nav-btn" onclick="showSection('pdf')">Usar PDF</button>
+    <button class="nav-btn" onclick="showSection('wsp')">Usar WhatsApp</button>
+    <button class="nav-btn" onclick="showSection('mail')">Usar Email</button>
+    <button class="nav-btn" onclick="showSection('reglas')">Reglas</button>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- INICIO -->
+  <section id="sec-intro" class="section active">
+    <div class="section-header">
+      <div class="section-eyebrow">Bienvenida</div>
+      <h2 class="section-title">Sistema de plantillas</h2>
+      <p class="section-desc">Esta guía explica cómo usar el sistema de comunicación digital de Nawan Resort Serrano. Cada mensaje que enviamos a un huésped debe partir de una plantilla para garantizar consistencia, profesionalismo y rapidez.</p>
+    </div>
+
+    <div class="card card-accent-navy">
+      <div class="card-title">¿Por qué usamos plantillas?</div>
+      <p>Cada comunicación refleja la calidad de servicio de Nawan. Las plantillas aseguran que nunca falte un dato importante, que el tono sea siempre el correcto y que el equipo pueda responder rápido sin errores.</p>
+    </div>
+
+    <div class="card card-accent-gold" style="margin-top:12px;">
+      <div class="card-title">Tres canales disponibles</div>
+      <p><strong>PDF</strong> para comunicaciones formales con datos de reserva completos. <strong>WhatsApp directo</strong> para respuestas simples y ágiles sin necesidad de adjunto. <strong>Email (Outlook)</strong> para comunicaciones por correo electrónico cuando el cliente lo requiere o prefiere.</p>
+    </div>
+
+    <div class="card card-accent-green" style="margin-top:12px;">
+      <div class="card-title">Regla de oro</div>
+      <p>Nunca enviar precios, números de reserva o condiciones de cancelación sin usar la plantilla correspondiente. Esos datos deben figurar siempre de forma precisa, completa y en el formato correcto.</p>
+    </div>
+  </section>
+
+  <!-- CANALES -->
+  <section id="sec-canales" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Canales</div>
+      <h2 class="section-title">Los tres formatos</h2>
+      <p class="section-desc">Cada canal tiene un propósito específico. Elegir el correcto es parte de brindar una buena experiencia al huésped.</p>
+    </div>
+
+    <div class="canal-grid">
+      <div class="canal-card">
+        <div class="canal-header">
+          <div class="canal-icon-row">
+            <div class="canal-icon" style="background:var(--wsp-bg);">💬</div>
+            <span class="canal-count">8</span>
+          </div>
+          <div class="canal-name">WhatsApp directo</div>
+          <div class="canal-sub">Google Docs → copiar y pegar</div>
+        </div>
+        <div class="canal-body">
+          <p>Para respuestas simples que no requieren adjunto. Se copia el texto del documento, se completan los campos variables y se envía directamente desde WhatsApp Business.</p>
+        </div>
+      </div>
+
+      <div class="canal-card">
+        <div class="canal-header">
+          <div class="canal-icon-row">
+            <div class="canal-icon" style="background:var(--pdf-bg);">📄</div>
+            <span class="canal-count">7</span>
+          </div>
+          <div class="canal-name">PDF</div>
+          <div class="canal-sub">Google Slides → exportar → enviar</div>
+        </div>
+        <div class="canal-body">
+          <p>Para comunicaciones formales con datos completos de reserva. Se edita en Google Slides, se exporta como PDF y se envía como adjunto por WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="canal-card">
+        <div class="canal-header">
+          <div class="canal-icon-row">
+            <div class="canal-icon" style="background:var(--mail-bg);">✉️</div>
+            <span class="canal-count">11</span>
+          </div>
+          <div class="canal-name">Email / Outlook</div>
+          <div class="canal-sub">Stripo → Outlook → enviar</div>
+        </div>
+        <div class="canal-body">
+          <p>Para clientes que prefieren el correo electrónico. Las plantillas ya están cargadas en Outlook vía Stripo. Se selecciona, se completan los campos y se envía.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exclusion-box">
+      <div class="exclusion-icon">⚡</div>
+      <div class="exclusion-text">
+        <div class="exclusion-title">Regla WSP vs PDF — son excluyentes</div>
+        <div class="exclusion-desc">Para cada situación existe <strong>o una plantilla de WhatsApp o una de PDF, nunca las dos</strong>. El canal se elige según el contexto: si la situación requiere un documento formal con datos completos → PDF. Si es una respuesta simple o de seguimiento → WhatsApp directo. El Email puede coexistir con cualquiera de los dos, ya que es un canal independiente.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANTILLAS -->
+  <section id="sec-plantillas" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Catálogo</div>
+      <h2 class="section-title">Las 26 plantillas</h2>
+      <p class="section-desc">Listado completo por canal. Hacé clic en cada plantilla para ver cuándo usarla, qué datos completar y qué no olvidar.</p>
+    </div>
+
+    <!-- WSP -->
+    <div class="plantilla-group">
+      <div class="plantilla-group-header">
+        <div class="group-icon" style="background:var(--wsp-bg);">💬</div>
+        <span class="group-title">WhatsApp directo</span>
+        <span class="group-count">8 plantillas</span>
+      </div>
+      <div id="list-wsp"></div>
+    </div>
+
+    <!-- PDF -->
+    <div class="plantilla-group">
+      <div class="plantilla-group-header">
+        <div class="group-icon" style="background:var(--pdf-bg);">📄</div>
+        <span class="group-title">PDF</span>
+        <span class="group-count">7 plantillas</span>
+      </div>
+      <div id="list-pdf"></div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="plantilla-group">
+      <div class="plantilla-group-header">
+        <div class="group-icon" style="background:var(--mail-bg);">✉️</div>
+        <span class="group-title">Email / Outlook</span>
+        <span class="group-count">11 plantillas</span>
+      </div>
+      <div id="list-mail"></div>
+    </div>
+  </section>
+
+  <!-- PDF STEPS -->
+  <section id="sec-pdf" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Instructivo</div>
+      <h2 class="section-title">Cómo usar las plantillas PDF</h2>
+      <p class="section-desc">Las plantillas PDF están en Google Slides. Tienen una base fija (PNG) y campos de texto editables encima. Los campos a completar están marcados en rojo como guía interna — ese color debe cambiarse antes de exportar.</p>
+    </div>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Abrir Google Drive y localizar la plantilla</div>
+          <div class="step-desc">Ir a la carpeta <em>Nawan / Proforma / Modelos</em> en Google Drive. Identificar la plantilla correspondiente a la situación del huésped.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Hacer una copia del archivo — nunca editar el original</div>
+          <div class="step-desc">Clic derecho sobre el archivo → <em>Hacer una copia</em>. Esto protege la plantilla para usos futuros.</div>
+          <div class="step-tip">Nombrar la copia con apellido del huésped y fecha: ej. <strong>Confirmacion_Lopez_15jun</strong></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Completar los campos marcados en rojo</div>
+          <div class="step-desc">Hacer clic sobre cada texto rojo y reemplazarlo con los datos reales: nombre del huésped, fechas, tipo de habitación, precios, cantidad de personas.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Cambiar el color del texto completado a azul</div>
+          <div class="step-desc">Seleccionar todo el texto que estaba en rojo y cambiar el color al azul del hotel antes de exportar. El rojo es solo una guía interna — no debe aparecer en el documento final.</div>
+          <div class="step-warning">El cliente nunca debe ver texto en rojo. Verificar que todos los campos estén en azul antes de continuar.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Exportar como PDF</div>
+          <div class="step-desc">Archivo → Descargar → PDF (.pdf). Abrir el PDF descargado y verificar que todo se vea correctamente antes de enviarlo.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <div class="step-title">Enviar por WhatsApp con mensaje de acompañamiento</div>
+          <div class="step-desc">Adjuntar el PDF en el chat del huésped en WhatsApp Business. Siempre acompañar con un breve mensaje de texto.</div>
+          <div class="step-tip">Ejemplo: "Estimado/a [Nombre], le enviamos el detalle de su reserva. Quedamos a disposición ante cualquier consulta."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" style="margin-top:8px;">
+      <strong>No hacer nunca</strong>
+      No enviar el archivo de Slides directamente. No exportar sin cambiar el rojo a azul. No modificar los textos fijos del fondo (la capa PNG). No olvidar adaptar el saludo al horario del envío.
+    </div>
+  </section>
+
+  <!-- WSP STEPS -->
+  <section id="sec-wsp" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Instructivo</div>
+      <h2 class="section-title">Cómo usar las plantillas de WhatsApp</h2>
+      <p class="section-desc">Mensajes listos para copiar y pegar, con variables a completar. Están en el Google Doc de situaciones de WhatsApp.</p>
+    </div>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Identificar la situación</div>
+          <div class="step-desc">¿Es una primera respuesta? ¿Seguimiento? ¿El cliente no envió la garantía? Cada situación tiene su plantilla específica. No improvisar.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Abrir el Google Doc y copiar el texto</div>
+          <div class="step-desc">Abrir el documento de plantillas WhatsApp, ubicar la situación correspondiente y copiar el texto completo.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Pegar en un bloc de notas y completar los campos</div>
+          <div class="step-desc">Antes de pegar en WhatsApp, completar todos los campos variables: nombre del huésped, saludo según horario, fechas u otros datos específicos indicados en la plantilla.</div>
+          <div class="step-tip">
+            <strong>Saludos por horario:</strong><br>
+            Hasta las 12 hs → Buen día<br>
+            12 hs a 20 hs → Buenas tardes<br>
+            Desde las 20 hs → Buenas noches
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Leer el mensaje completo antes de enviar</div>
+          <div class="step-desc">Verificar que no quede ningún campo sin completar ni texto de la plantilla que deba borrarse. Enviar desde WhatsApp Business del hotel.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-gold">
+      <strong>Recordatorio importante</strong>
+      Las plantillas de WhatsApp y PDF son excluyentes. Si la situación tiene plantilla PDF, no usar el texto de WhatsApp para esa misma situación — usar siempre el canal correcto.
+    </div>
+  </section>
+
+  <!-- MAIL STEPS -->
+  <section id="sec-mail" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Instructivo</div>
+      <h2 class="section-title">Cómo usar las plantillas de Email</h2>
+      <p class="section-desc">Las plantillas están diseñadas en Stripo y ya están cargadas en Outlook. Los campos editables aparecen en azul directamente — ese azul es el color final del documento, no hay que cambiarlo.</p>
+    </div>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Abrir Outlook y crear nuevo correo</div>
+          <div class="step-desc">En Outlook, ir a <em>Nuevo correo</em> y buscar la opción de plantillas (Mis plantillas o el acceso configurado por el equipo).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Seleccionar la plantilla correcta</div>
+          <div class="step-desc">Las plantillas están nombradas por situación. Seleccionar la que corresponda. El diseño se cargará automáticamente en el cuerpo del correo.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Completar los campos en azul</div>
+          <div class="step-desc">Los campos editables ya están en azul — ese es el color final. Hacer clic sobre cada campo azul y reemplazarlo con los datos del huésped. No cambiar el color.</div>
+          <div class="step-tip">A diferencia del PDF, en el email el azul ya es el color definitivo. Solo hay que reemplazar el contenido de cada campo.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Verificar asunto y destinatario</div>
+          <div class="step-desc">El asunto ya está pre-escrito en cada plantilla. Confirmar que sea el correcto. Agregar el email del huésped en el campo <em>Para:</em>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Vista previa y envío</div>
+          <div class="step-desc">Revisar que el diseño se vea correctamente y que todos los datos variables fueron reemplazados. Enviar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-success">
+      <strong>¿Cuándo usar email vs WhatsApp?</strong>
+      Email: cuando el cliente lo solicitó, para comunicaciones con empresas, o cuando se necesita trazabilidad formal. WhatsApp: para la mayoría de las comunicaciones cotidianas. El email puede usarse en paralelo con WSP o PDF — son canales independientes.
+    </div>
+  </section>
+
+  <!-- REGLAS -->
+  <section id="sec-reglas" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Lineamientos</div>
+      <h2 class="section-title">Reglas de comunicación</h2>
+      <p class="section-desc">Aplican a todos los canales sin excepción. Garantizan que el equipo hable con una sola voz.</p>
+    </div>
+
+    <div class="rules-grid">
+      <div class="rule-item">
+        <div class="rule-label">Tratamiento</div>
+        <div class="rule-val">Siempre formal. Usar "usted" y "Estimado/a". Nunca tutear al huésped.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Firma</div>
+        <div class="rule-val">Cerrar siempre con "Recepción · Nawan Resort Serrano".</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Tiempo de respuesta</div>
+        <div class="rule-val">Máximo 30 minutos para la respuesta inicial, aunque sea el acuse de recibo.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Precios</div>
+        <div class="rule-val">Nunca informar precios sin verificar tarifas vigentes en el sistema primero.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Errores</div>
+        <div class="rule-val">Si se envió un dato incorrecto, avisar al responsable de turno antes de corregir al cliente.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Tono y emojis</div>
+        <div class="rule-val">Tono cálido pero profesional. Sin emojis en ningún canal.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Saludo horario</div>
+        <div class="rule-val">Buen día (hasta 12 hs) · Buenas tardes (12–20 hs) · Buenas noches (20 hs en adelante).</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Garantía</div>
+        <div class="rule-val">El plazo para enviar datos de garantía es 48 hs hábiles desde la confirmación de la solicitud.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-gold">
+      <strong>Política de cancelaciones — resumen</strong>
+      Con 3 o más días de antelación: saldo reutilizable en alojamiento u otros servicios. Fines de semana largos: 100% no reembolsable. Tarifas promo: sujetas a disponibilidad en nueva fecha. Fuera de plazo: penalidad equivalente a la primera noche. No-show o cancelación no informada: penalidad del 100% de la estadía.
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="section-eyebrow" style="margin-bottom:10px;">Situaciones a escalar al responsable de turno</div>
+      <div class="esc-list">
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Reclamos de huéspedes durante la estadía</div></div>
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Solicitudes de devolución de dinero</div></div>
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Consultas sobre eventos, casamientos o grupos</div></div>
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Cualquier duda sobre tarifas especiales o condiciones fuera de lo estándar</div></div>
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Confirmación depósito con tarifa no vigente — verificar antes de enviar</div></div>
+        <div class="esc-item"><div class="esc-dot"></div><div class="esc-text">Huéspedes que insisten después de disponibilidad negativa</div></div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" style="margin-top:16px;">
+      <strong>Nunca improvisar fuera de las plantillas</strong>
+      Si la situación no encaja con ninguna plantilla existente, consultar al responsable antes de responder. No inventar condiciones, descuentos ni políticas sobre la marcha.
+    </div>
+  </section>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Nawan Resort Serrano</div>
+    <div class="footer-sub">Sinsacate · Córdoba · Argentina</div>
+    <div class="footer-divider"></div>
+    <div class="footer-credits">Guía de uso interno · <span>Producido por Exxo Studio · 2025</span></div>
+  </div>
+</footer>
+
+<script>
+const wspPlantillas = [
+  { num: 1, name: "Respuesta inicial genérica", cuando: "Primera respuesta a cualquier consulta entrante cuando aún no se tiene la información completa para responder. Siempre dentro de los 30 minutos de recibida la consulta.", datos: "Ninguno. Es un acuse de recibo.", nota: "Usar siempre como primer mensaje ante cualquier consulta, aunque sea tarde en el día." },
+  { num: 2, name: "Disponibilidad negativa", cuando: "Cuando no hay lugar disponible para las fechas consultadas.", datos: "Fechas consultadas (opcional, para personalizar). No requiere datos de reserva.", nota: "Siempre ofrecer alternativa de fechas o invitar a consultar nuevamente." },
+  { num: 3, name: "Mensaje post estadía", cuando: "Después del check-out del huésped, para agradecer la visita y solicitar una reseña en Google.", datos: "Nombre del huésped.", nota: "Incluye el link directo a Google Reviews. No modificar ese enlace nunca." },
+  { num: 4, name: "Vencimiento de garantía", cuando: "Cuando el cliente solicitó reserva pero no envió la garantía dentro de las 48 hs hábiles.", datos: "Fechas específicas de la reserva solicitada.", nota: "Enviar antes del cierre del día para darle tiempo al cliente de responder ese mismo día." },
+  { num: 5, name: "Pedido de garantía", cuando: "Cuando se aceptó la solicitud de reserva y se le pide al cliente los datos de garantía (tarjeta o depósito bancario).", datos: "Nº de reserva, check-in, check-out, habitación, precios, cantidad de personas. Datos bancarios para depósito.", nota: "Tiene un plazo de 48 hs hábiles para enviar la garantía. Aclararlo siempre." },
+  { num: 6, name: "Cancelación con saldo a favor", cuando: "Cuando el cliente cancela su reserva dentro del plazo y le corresponde un saldo reutilizable.", datos: "Nº de reserva, fechas, tipo de habitación, monto del saldo a favor.", nota: "El saldo tiene vigencia de 1 año sobre tarifa rack o promoción vigente. Aclararlo siempre." },
+  { num: 7, name: "Seguimiento sin respuesta", cuando: "Cuando se envió información al cliente pero no respondió después de un tiempo razonable.", datos: "Ninguno específico. Hace referencia a la información enviada anteriormente.", nota: "No enviar más de una vez por conversación para no ser invasivo." },
+  { num: 8, name: "Confirmación recepción comprobante", cuando: "Cuando el cliente envía un comprobante de pago o datos de tarjeta y hay que confirmarselo antes de verificar.", datos: "Ninguno. Es un acuse de recibo del comprobante.", nota: "Enviar inmediatamente al recibir el comprobante, antes de verificar el pago." }
+];
+
+const pdfPlantillas = [
+  { num: 1, name: "Disponibilidad positiva", cuando: "Cuando hay disponibilidad para las fechas solicitadas sin promoción especial.", datos: "Fechas de check-in y check-out, tipo de habitación disponible, precio por noche y precio total.", nota: "Incluir la tabla de tarifas y todas las opciones de habitación disponibles." },
+  { num: 2, name: "Disponibilidad promo", cuando: "Cuando hay disponibilidad Y existe una tarifa promocional aplicable a esas fechas.", datos: "Igual que disponibilidad positiva + precio promocional y fecha de vencimiento de la promo.", nota: "Aclarar siempre la fecha límite para reservar con la tarifa promocional." },
+  { num: 3, name: "Disponibilidad negativa", cuando: "Versión PDF de disponibilidad negativa, para cuando se quiere adjuntar también el detalle de tarifas para otras fechas.", datos: "Opcional: tarifas vigentes para referencia del huésped.", nota: "Usar solo si el contexto justifica enviar un PDF. Para respuesta simple, usar la versión WhatsApp." },
+  { num: 4, name: "Confirmación reserva depósito", cuando: "Cuando el cliente confirma la reserva y abona mediante depósito bancario como garantía.", datos: "Nº de reserva, check-in, check-out, habitación, precio por noche, total, cantidad de adultos y menores.", nota: "Incluir política de cancelación completa. Solicitar envío del comprobante." },
+  { num: 5, name: "Confirmación de solicitud y pedido de garantía de depósito", cuando: "Cuando se acepta la solicitud de reserva y se solicitan los datos de garantía (versión formal en PDF).", datos: "Nº de reserva, habitación, fechas, precios detallados. Datos bancarios y opciones de tarjeta.", nota: "Plazo de 48 hs hábiles para enviar la garantía. Si no llega, usar la plantilla de vencimiento." },
+  { num: 6, name: "Confirmación depósito (tarifa no vigente)", cuando: "Cuando el cliente hizo el depósito pero la tarifa original ya no está vigente al momento de confirmar.", datos: "Datos de reserva + aclaración sobre la tarifa vigente y diferencia a abonar si corresponde.", nota: "Verificar siempre con el responsable de turno antes de enviar esta plantilla." },
+  { num: 7, name: "Confirmación con promo", cuando: "Confirmación de reserva donde se aplicó una tarifa promocional.", datos: "Datos completos de reserva + detalle de la promoción aplicada y sus condiciones.", nota: "Especificar claramente que la tarifa es promocional y que aplica para las fechas reservadas." }
+];
+
+const mailPlantillas = [
+  { num: 1, name: "Respuesta inicial genérica", cuando: "Primera respuesta por email a consultas entrantes. Mismo uso que la versión WhatsApp.", datos: "Ninguno. Acuse de recibo.", nota: "Los campos editables ya están en azul — reemplazar solo el contenido, sin cambiar el color." },
+  { num: 2, name: "Vencimiento de garantía", cuando: "Recordatorio por email cuando el cliente no envió la garantía en el plazo establecido.", datos: "Fechas de la reserva solicitada.", nota: "Puede enviarse junto con un WhatsApp para mayor visibilidad." },
+  { num: 3, name: "Mensaje post estadía (review Google)", cuando: "Email de agradecimiento post check-out con solicitud de reseña en Google.", datos: "Nombre del huésped.", nota: "El link a Google Reviews está incluido en la plantilla. No modificarlo." },
+  { num: 4, name: "Disponibilidad positiva", cuando: "Email con detalle de disponibilidad sin promoción para las fechas consultadas.", datos: "Fechas, habitación, precios.", nota: "Los campos en azul son los editables. El diseño y los textos fijos no se modifican." },
+  { num: 5, name: "Disponibilidad promo", cuando: "Email con disponibilidad e información de tarifa promocional vigente.", datos: "Fechas, habitación, precios + detalle de la promo y su vencimiento.", nota: "Aclarar la fecha límite para aprovechar la promo." },
+  { num: 6, name: "Disponibilidad negativa", cuando: "Email informando que no hay disponibilidad para las fechas consultadas.", datos: "Ninguno específico.", nota: "Ofrecer alternativas de fechas para mantener el interés del cliente." },
+  { num: 7, name: "Confirmación reserva depósito", cuando: "Confirmación formal por email de la reserva con pago de depósito.", datos: "Nº de reserva, fechas, habitación, precios, datos del huésped.", nota: "Incluye política de cancelación completa en el diseño de la plantilla." },
+  { num: 8, name: "Confirmación de solicitud y pedido de garantía", cuando: "Email formal solicitando datos de garantía (tarjeta o depósito) para confirmar la reserva.", datos: "Datos de la reserva + datos bancarios + opciones de tarjeta.", nota: "El plazo es 48 hs hábiles. Aclararlo en el campo correspondiente." },
+  { num: 9, name: "Confirmación depósito (tarifa no vigente)", cuando: "Email cuando el depósito se recibió pero la tarifa ya cambió.", datos: "Datos de reserva + tarifa vigente + diferencia a abonar si aplica.", nota: "Consultar al responsable antes de enviar." },
+  { num: 10, name: "Confirmación con promo", cuando: "Confirmación formal por email de reserva con tarifa promocional.", datos: "Datos completos + condiciones de la promoción aplicada.", nota: "Especificar que la tarifa es promocional y para qué fechas aplica." },
+  { num: 11, name: "Cancelación con saldo a favor", cuando: "Email formal comunicando la cancelación y el saldo reutilizable del cliente.", datos: "Nº de reserva, fechas, habitación, monto del saldo a favor.", nota: "Vigencia del saldo: 1 año. Sobre tarifa rack o promo vigente al momento del uso." }
+];
+
+function buildList(containerId, items, tagType) {
+  const container = document.getElementById(containerId);
+  items.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'plantilla-item';
+    div.innerHTML = `
+      <button class="plantilla-trigger" onclick="togglePlantilla(this)">
+        <div class="p-num">${p.num}</div>
+        <div class="p-info">
+          <div class="p-name">${p.name}</div>
+          <div class="p-tags"><span class="tag tag-${tagType}">${tagType === 'wsp' ? 'WhatsApp' : tagType === 'pdf' ? 'PDF' : 'Email'}</span></div>
+        </div>
+        <div class="p-arrow">›</div>
+      </button>
+      <div class="plantilla-body">
+        <div class="p-detail">
+          <div class="p-row"><div class="p-label">Cuándo usarla</div><div class="p-value">${p.cuando}</div></div>
+          <div class="p-row"><div class="p-label">Datos a completar</div><div class="p-value">${p.datos}</div></div>
+          <div class="p-note">${p.nota}</div>
+        </div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function togglePlantilla(btn) {
+  const item = btn.closest('.plantilla-item');
+  item.classList.toggle('open');
+}
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  const map = ['intro','canales','plantillas','pdf','wsp','mail','reglas'];
+  const idx = map.indexOf(id);
+  document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+buildList('list-wsp', wspPlantillas, 'wsp');
+buildList('list-pdf', pdfPlantillas, 'pdf');
+buildList('list-mail', mailPlantillas, 'mail');
+</script>
+</body>
+</html>
