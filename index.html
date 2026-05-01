@@ -684,10 +684,10 @@
             <span class="canal-count">7</span>
           </div>
           <div class="canal-name">PDF</div>
-          <div class="canal-sub">Google Slides → exportar → enviar</div>
+          <div class="canal-sub">generador web → un clic → enviar</div>
         </div>
         <div class="canal-body">
-          <p>Para comunicaciones formales con datos completos de reserva. Se edita en Google Slides, se exporta como PDF y se envía como adjunto por WhatsApp.</p>
+          <p>Para comunicaciones formales con datos completos de reserva. Se usa el generador online del hotel, se completan los campos del panel lateral y se descarga el PDF listo para enviar por WhatsApp.</p>
         </div>
       </div>
 
@@ -759,45 +759,47 @@
     <div class="section-header">
       <div class="section-eyebrow">Instructivo</div>
       <h2 class="section-title">Cómo usar las plantillas PDF</h2>
-      <p class="section-desc">Las plantillas PDF están en Google Slides. Tienen una base fija (PNG) y campos de texto editables encima. Los campos a completar están marcados en rojo como guía interna — ese color debe cambiarse antes de exportar.</p>
+      <p class="section-desc">Los PDFs se generan con el <strong>generador online del hotel</strong>. No se usa Google Slides. El sistema tiene vista previa en tiempo real y descarga el documento listo en un solo clic — sin copiar, sin cambiar colores, sin exportar manualmente.</p>
     </div>
 
     <div class="step-list">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <div class="step-title">Abrir Google Drive y localizar la plantilla</div>
-          <div class="step-desc">Ir a la carpeta <em>Nawan / Proforma / Modelos</em> en Google Drive. Identificar la plantilla correspondiente a la situación del huésped.</div>
+          <div class="step-title">Abrir el generador de PDFs</div>
+          <div class="step-desc">Ir a <strong>nawan-resort.github.io/generar-pdf</strong> desde cualquier navegador. No hace falta cuenta ni contraseña.</div>
+          <div class="step-tip">Se puede guardar como favorito para acceso rápido.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <div class="step-title">Hacer una copia del archivo — nunca editar el original</div>
-          <div class="step-desc">Clic derecho sobre el archivo → <em>Hacer una copia</em>. Esto protege la plantilla para usos futuros.</div>
-          <div class="step-tip">Nombrar la copia con apellido del huésped y fecha: ej. <strong>Confirmacion_Lopez_15jun</strong></div>
+          <div class="step-title">Seleccionar el tipo de documento</div>
+          <div class="step-desc">En el menú desplegable <em>"Tipo de documento"</em> elegir la plantilla que corresponde a la situación: disponibilidad positiva, confirmación con promo, solicitud de garantía, etc.</div>
+          <div class="step-tip">El panel lateral se adapta automáticamente y muestra solo los campos necesarios para cada tipo.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <div class="step-title">Completar los campos marcados en rojo</div>
-          <div class="step-desc">Hacer clic sobre cada texto rojo y reemplazarlo con los datos reales: nombre del huésped, fechas, tipo de habitación, precios, cantidad de personas.</div>
+          <div class="step-title">Completar los campos del panel lateral</div>
+          <div class="step-desc">Ingresar los datos del huésped en el panel de la izquierda: nombre, tratamiento (Estimado / Estimada), saludo horario, fechas de check-in y check-out, tipo y cantidad de habitaciones, pasajeros, precios. El documento se actualiza en tiempo real a la derecha.</div>
+          <div class="step-tip"><strong>Campos comunes a todos los documentos:</strong> nombre, tratamiento, saludo, check-in, check-out.<br><strong>Solo disponibilidad:</strong> tarifas por tipo de habitación (las que no tienen precio se ocultan solas).<br><strong>Solo confirmaciones:</strong> N° de reserva, habitaciones, pasajeros, precio final por noche, total.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-content">
-          <div class="step-title">Cambiar el color del texto completado a azul</div>
-          <div class="step-desc">Seleccionar todo el texto que estaba en rojo y cambiar el color al azul del hotel antes de exportar. El rojo es solo una guía interna — no debe aparecer en el documento final.</div>
-          <div class="step-warning">El cliente nunca debe ver texto en rojo. Verificar que todos los campos estén en azul antes de continuar.</div>
+          <div class="step-title">Verificar la vista previa</div>
+          <div class="step-desc">El panel derecho muestra el documento exactamente como va a quedar. Confirmar que los datos sean correctos: nombre bien escrito, fechas, habitación, precios. No hay colores a cambiar ni pasos extra.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">5</div>
         <div class="step-content">
-          <div class="step-title">Exportar como PDF</div>
-          <div class="step-desc">Archivo → Descargar → PDF (.pdf). Abrir el PDF descargado y verificar que todo se vea correctamente antes de enviarlo.</div>
+          <div class="step-title">Descargar el PDF</div>
+          <div class="step-desc">Hacer clic en el botón rojo <em>"Descargar PDF"</em>. El archivo se genera y descarga automáticamente en una sola página con el logo del hotel.</div>
+          <div class="step-warning">Si el navegador bloquea la descarga, permitirla desde la barra de notificaciones. El archivo no se guarda en el servidor — se genera localmente.</div>
         </div>
       </div>
       <div class="step">
@@ -805,14 +807,14 @@
         <div class="step-content">
           <div class="step-title">Enviar por WhatsApp con mensaje de acompañamiento</div>
           <div class="step-desc">Adjuntar el PDF en el chat del huésped en WhatsApp Business. Siempre acompañar con un breve mensaje de texto.</div>
-          <div class="step-tip">Ejemplo: "Estimado/a [Nombre], le enviamos el detalle de su reserva. Quedamos a disposición ante cualquier consulta."</div>
+          <div class="step-tip">Ejemplo: "Estimado [Nombre], le enviamos el detalle de su reserva. Quedamos a disposición ante cualquier consulta."</div>
         </div>
       </div>
     </div>
 
     <div class="alert alert-danger" style="margin-top:8px;">
       <strong>No hacer nunca</strong>
-      No enviar el archivo de Slides directamente. No exportar sin cambiar el rojo a azul. No modificar los textos fijos del fondo (la capa PNG). No olvidar adaptar el saludo al horario del envío.
+      No enviar el PDF sin revisar la vista previa. No dejar campos en blanco (nombres, fechas, precios). No usar el mismo documento descargado para otro huésped — siempre generar uno nuevo. No olvidar adaptar el saludo al horario del envío.
     </div>
   </section>
 
@@ -895,7 +897,7 @@
         <div class="step-content">
           <div class="step-title">Completar los campos en azul</div>
           <div class="step-desc">Los campos editables ya están en azul — ese es el color final. Hacer clic sobre cada campo azul y reemplazarlo con los datos del huésped. No cambiar el color.</div>
-          <div class="step-tip">A diferencia del PDF, en el email el azul ya es el color definitivo. Solo hay que reemplazar el contenido de cada campo.</div>
+          <div class="step-tip">Los campos en azul son los únicos que se editan. El diseño y los textos fijos no se modifican.</div>
         </div>
       </div>
       <div class="step">
@@ -1011,13 +1013,13 @@ const wspPlantillas = [
 ];
 
 const pdfPlantillas = [
-  { num: 1, name: "Disponibilidad positiva", cuando: "Cuando hay disponibilidad para las fechas solicitadas sin promoción especial.", datos: "Fechas de check-in y check-out, tipo de habitación disponible, precio por noche y precio total.", nota: "Incluir la tabla de tarifas y todas las opciones de habitación disponibles." },
-  { num: 2, name: "Disponibilidad promo", cuando: "Cuando hay disponibilidad Y existe una tarifa promocional aplicable a esas fechas.", datos: "Igual que disponibilidad positiva + precio promocional y fecha de vencimiento de la promo.", nota: "Aclarar siempre la fecha límite para reservar con la tarifa promocional." },
-  { num: 3, name: "Disponibilidad negativa", cuando: "Versión PDF de disponibilidad negativa, para cuando se quiere adjuntar también el detalle de tarifas para otras fechas.", datos: "Opcional: tarifas vigentes para referencia del huésped.", nota: "Usar solo si el contexto justifica enviar un PDF. Para respuesta simple, usar la versión WhatsApp." },
-  { num: 4, name: "Confirmación reserva depósito", cuando: "Cuando el cliente confirma la reserva y abona mediante depósito bancario como garantía.", datos: "Nº de reserva, check-in, check-out, habitación, precio por noche, total, cantidad de adultos y menores.", nota: "Incluir política de cancelación completa. Solicitar envío del comprobante." },
-  { num: 5, name: "Confirmación de solicitud y pedido de garantía de depósito", cuando: "Cuando se acepta la solicitud de reserva y se solicitan los datos de garantía (versión formal en PDF).", datos: "Nº de reserva, habitación, fechas, precios detallados. Datos bancarios y opciones de tarjeta.", nota: "Plazo de 48 hs hábiles para enviar la garantía. Si no llega, usar la plantilla de vencimiento." },
-  { num: 6, name: "Confirmación depósito (tarifa no vigente)", cuando: "Cuando el cliente hizo el depósito pero la tarifa original ya no está vigente al momento de confirmar.", datos: "Datos de reserva + aclaración sobre la tarifa vigente y diferencia a abonar si corresponde.", nota: "Verificar siempre con el responsable de turno antes de enviar esta plantilla." },
-  { num: 7, name: "Confirmación con promo", cuando: "Confirmación de reserva donde se aplicó una tarifa promocional.", datos: "Datos completos de reserva + detalle de la promoción aplicada y sus condiciones.", nota: "Especificar claramente que la tarifa es promocional y que aplica para las fechas reservadas." }
+  { num: 1, name: "Disponibilidad positiva", cuando: "Cuando hay disponibilidad para las fechas solicitadas sin promoción especial.", datos: "Fechas de check-in y check-out, horarios (14:30 / 11:00), tarifas por tipo de habitación. Las categorías sin precio se ocultan solas. Texto de solicitud de depósito editable.", nota: "Completar solo los tipos de habitación disponibles — los que no tengan precio no aparecen en el documento." },
+  { num: 2, name: "Disponibilidad negativa", cuando: "Versión PDF de disponibilidad negativa, para cuando se quiere adjuntar contexto formal al huésped.", datos: "Nombre, tratamiento (Estimado / Estimada), saludo horario. No requiere datos de reserva.", nota: "Usar solo si el contexto justifica enviar un PDF. Para respuesta simple, usar la versión WhatsApp." },
+  { num: 3, name: "Solicitud + Garantía depósito", cuando: "Cuando se acepta la solicitud de reserva y se solicitan los datos de garantía (versión formal en PDF).", datos: "Nº de reserva, check-in, check-out, tipo y cantidad de habitaciones, adultos y menores, precio final por noche, monto total y monto de garantía a depositar.", nota: "Plazo de 48 hs hábiles para enviar la garantía. Si no llega, usar la plantilla de vencimiento de WhatsApp." },
+  { num: 4, name: "Confirmación con Promo", cuando: "Confirmación de reserva donde se aplicó una tarifa promocional. Muestra el nombre de la promo destacado en banner.", datos: "Nº de reserva, fechas, habitaciones (tipo y cantidad), pasajeros, precio final por noche, total, monto garantía, vigencia de tarifa y nombre de la promoción.", nota: "El nombre de la promoción aparece en grande en el encabezado y en el texto del saludo. Completar el campo 'Nombre de la Promoción' en el panel." },
+  { num: 5, name: "Disponibilidad con Promo", cuando: "Cuando hay disponibilidad Y existe una tarifa promocional aplicable a esas fechas.", datos: "Igual que disponibilidad positiva + nombre de la promoción. El nombre aparece destacado en banner navy en el documento.", nota: "Completar el campo 'Nombre de la Promoción'. Aclarar siempre la fecha límite para reservar con la tarifa promocional." },
+  { num: 6, name: "Confirmación depósito (tarifa no vigente)", cuando: "Cuando el cliente hizo el depósito pero la tarifa original ya no está vigente al momento de confirmar.", datos: "Nº de reserva, fechas, habitaciones, pasajeros, precio final por noche, total, monto depositado, saldo a abonar y vigencia de tarifa.", nota: "Verificar siempre con el responsable de turno antes de enviar esta plantilla." },
+  { num: 7, name: "Confirmación reserva depósito", cuando: "Cuando el cliente confirma la reserva y abona mediante depósito bancario.", datos: "Nº de reserva, check-in, check-out, tipo y cantidad de habitaciones, adultos y menores, precio final por noche, total, monto depositado y saldo restante.", nota: "Incluye política de cancelación completa. Recordar solicitar envío del comprobante de pago." }
 ];
 
 const mailPlantillas = [
