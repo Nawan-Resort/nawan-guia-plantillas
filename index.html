@@ -573,7 +573,65 @@
     .rules-grid { grid-template-columns: 1fr; }
     .plantilla-body { padding-left: 16px; }
     .nav-btn { padding: 14px 14px; font-size: 10px; }
+    .ql-row { flex-direction: column; }
+    .sec-nav { flex-direction: column; gap: 8px; }
   }
+
+  /* ===== QUICK LINKS ===== */
+  .ql-row {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;
+  }
+  .ql-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 6px; font-size: 12px; font-weight: 500;
+    text-decoration: none; cursor: pointer; border: none;
+    transition: background 0.2s, transform 0.1s; letter-spacing: 0.3px;
+    font-family: 'DM Sans', sans-serif; white-space: nowrap;
+  }
+  .ql-btn:active { transform: scale(0.97); }
+  .ql-navy { background: var(--navy); color: white; }
+  .ql-navy:hover { background: var(--navy-light); }
+  .ql-gold { background: var(--gold); color: white; }
+  .ql-gold:hover { background: var(--gold-light); }
+  .ql-outline { background: transparent; color: var(--navy); border: 1px solid var(--cream-border); }
+  .ql-outline:hover { background: var(--cream-dark); color: var(--navy); }
+  .ql-wsp { background: var(--wsp-bg); color: var(--wsp-color); }
+  .ql-wsp:hover { background: #d4eddf; }
+
+  /* ===== TOOL BANNER ===== */
+  .tool-banner {
+    background: var(--navy); border-radius: 8px; padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .tool-banner-body { flex: 1; }
+  .tool-banner-eyebrow { font-size: 10px; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .tool-banner-title { font-size: 15px; color: white; font-weight: 500; }
+  .tool-banner-url { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  /* ===== CANAL FOOTER LINK ===== */
+  .canal-footer {
+    padding: 10px 18px 14px; border-top: 1px solid var(--cream-border);
+  }
+
+  /* ===== SECTION BOTTOM NAV ===== */
+  .sec-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--cream-border);
+  }
+  .sec-nav-prev { color: var(--muted); font-size: 12px; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; padding: 6px 0; }
+  .sec-nav-prev:hover { color: var(--navy); }
+  .sec-nav-next { color: var(--navy); font-size: 12px; font-weight: 500; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; padding: 6px 0; }
+  .sec-nav-next:hover { color: var(--gold); }
+
+  /* ===== PLANTILLA LINK (PDF) ===== */
+  .p-tool-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-top: 12px; padding: 7px 12px; background: var(--navy);
+    color: white; border-radius: 5px; font-size: 11px; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.5px; transition: background 0.2s;
+  }
+  .p-tool-link:hover { background: var(--navy-light); }
 </style>
 </head>
 <body>
@@ -652,6 +710,17 @@
       <div class="card-title">Regla de oro</div>
       <p>Nunca enviar precios, números de reserva o condiciones de cancelación sin usar la plantilla correspondiente. Esos datos deben figurar siempre de forma precisa, completa y en el formato correcto.</p>
     </div>
+
+    <div class="ql-row">
+      <a class="ql-btn ql-gold" href="https://nawan-resort.github.io/generar-pdf/" target="_blank">📄 Abrir generador de PDFs →</a>
+      <a class="ql-btn ql-outline" href="https://nawan-resort.github.io/ficha-registro-contrato/" target="_blank">📋 Ficha de registro →</a>
+      <button class="ql-btn ql-navy" onclick="showSection('plantillas')">Ver catálogo de plantillas →</button>
+    </div>
+
+    <div class="sec-nav">
+      <span></span>
+      <button class="sec-nav-next" onclick="showSection('canales')">Los canales →</button>
+    </div>
   </section>
 
   <!-- CANALES -->
@@ -675,6 +744,9 @@
         <div class="canal-body">
           <p>Para respuestas simples que no requieren adjunto. Se copia el texto del documento, se completan los campos variables y se envía directamente desde WhatsApp Business.</p>
         </div>
+        <div class="canal-footer">
+          <button class="ql-btn ql-wsp" onclick="showSection('wsp')" style="font-size:11px;padding:7px 12px;">Ver instrucciones de uso →</button>
+        </div>
       </div>
 
       <div class="canal-card">
@@ -688,6 +760,10 @@
         </div>
         <div class="canal-body">
           <p>Para comunicaciones formales con datos completos de reserva. Se usa el generador online del hotel, se completan los campos del panel lateral y se descarga el PDF listo para enviar por WhatsApp.</p>
+        </div>
+        <div class="canal-footer" style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="ql-btn ql-outline" onclick="showSection('pdf')" style="font-size:11px;padding:7px 12px;">Ver instrucciones →</button>
+          <a class="ql-btn ql-navy" href="https://nawan-resort.github.io/generar-pdf/" target="_blank" style="font-size:11px;padding:7px 12px;">Abrir generador →</a>
         </div>
       </div>
 
@@ -703,6 +779,9 @@
         <div class="canal-body">
           <p>Para clientes que prefieren el correo electrónico. Las plantillas ya están cargadas en Outlook vía Stripo. Se selecciona, se completan los campos y se envía.</p>
         </div>
+        <div class="canal-footer">
+          <button class="ql-btn ql-outline" onclick="showSection('mail')" style="font-size:11px;padding:7px 12px;color:var(--mail-color);border-color:var(--mail-color);">Ver instrucciones →</button>
+        </div>
       </div>
     </div>
 
@@ -712,6 +791,11 @@
         <div class="exclusion-title">Regla WSP vs PDF — son excluyentes</div>
         <div class="exclusion-desc">Para cada situación existe <strong>o una plantilla de WhatsApp o una de PDF, nunca las dos</strong>. El canal se elige según el contexto: si la situación requiere un documento formal con datos completos → PDF. Si es una respuesta simple o de seguimiento → WhatsApp directo. El Email puede coexistir con cualquiera de los dos, ya que es un canal independiente.</div>
       </div>
+    </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('intro')">← Inicio</button>
+      <button class="sec-nav-next" onclick="showSection('plantillas')">Ver catálogo de plantillas →</button>
     </div>
   </section>
 
@@ -752,6 +836,11 @@
       </div>
       <div id="list-mail"></div>
     </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('canales')">← Los canales</button>
+      <button class="sec-nav-next" onclick="showSection('pdf')">Cómo usar PDF →</button>
+    </div>
   </section>
 
   <!-- PDF STEPS -->
@@ -760,6 +849,15 @@
       <div class="section-eyebrow">Instructivo</div>
       <h2 class="section-title">Cómo usar las plantillas PDF</h2>
       <p class="section-desc">Los PDFs se generan con el <strong>generador online del hotel</strong>. No se usa Google Slides. El sistema tiene vista previa en tiempo real y descarga el documento listo en un solo clic — sin copiar, sin cambiar colores, sin exportar manualmente.</p>
+    </div>
+
+    <div class="tool-banner">
+      <div class="tool-banner-body">
+        <div class="tool-banner-eyebrow">Herramienta del hotel</div>
+        <div class="tool-banner-title">Generador de PDFs — Nawan Resort</div>
+        <div class="tool-banner-url">nawan-resort.github.io/generar-pdf</div>
+      </div>
+      <a class="ql-btn ql-gold" href="https://nawan-resort.github.io/generar-pdf/" target="_blank">Abrir generador →</a>
     </div>
 
     <div class="step-list">
@@ -816,6 +914,11 @@
       <strong>No hacer nunca</strong>
       No enviar el PDF sin revisar la vista previa. No dejar campos en blanco (nombres, fechas, precios). No usar el mismo documento descargado para otro huésped — siempre generar uno nuevo. No olvidar adaptar el saludo al horario del envío.
     </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('plantillas')">← Catálogo de plantillas</button>
+      <button class="sec-nav-next" onclick="showSection('wsp')">Usar WhatsApp →</button>
+    </div>
   </section>
 
   <!-- WSP STEPS -->
@@ -866,6 +969,11 @@
     <div class="alert alert-gold">
       <strong>Recordatorio importante</strong>
       Las plantillas de WhatsApp y PDF son excluyentes. Si la situación tiene plantilla PDF, no usar el texto de WhatsApp para esa misma situación — usar siempre el canal correcto.
+    </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('pdf')">← Usar PDF</button>
+      <button class="sec-nav-next" onclick="showSection('mail')">Usar Email →</button>
     </div>
   </section>
 
@@ -919,6 +1027,11 @@
     <div class="alert alert-success">
       <strong>¿Cuándo usar email vs WhatsApp?</strong>
       Email: cuando el cliente lo solicitó, para comunicaciones con empresas, o cuando se necesita trazabilidad formal. WhatsApp: para la mayoría de las comunicaciones cotidianas. El email puede usarse en paralelo con WSP o PDF — son canales independientes.
+    </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('wsp')">← Usar WhatsApp</button>
+      <button class="sec-nav-next" onclick="showSection('reglas')">Reglas de comunicación →</button>
     </div>
   </section>
 
@@ -986,6 +1099,20 @@
       <strong>Nunca improvisar fuera de las plantillas</strong>
       Si la situación no encaja con ninguna plantilla existente, consultar al responsable antes de responder. No inventar condiciones, descuentos ni políticas sobre la marcha.
     </div>
+
+    <div class="sec-nav">
+      <button class="sec-nav-prev" onclick="showSection('mail')">← Usar Email</button>
+      <button class="sec-nav-next" onclick="showSection('intro')">↑ Volver al inicio</button>
+    </div>
+
+    <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--cream-border);">
+      <div class="section-eyebrow" style="margin-bottom:12px;">Acceso rápido a las herramientas</div>
+      <div class="ql-row">
+        <a class="ql-btn ql-gold" href="https://nawan-resort.github.io/generar-pdf/" target="_blank">📄 Generador de PDFs →</a>
+        <a class="ql-btn ql-outline" href="https://nawan-resort.github.io/ficha-registro-contrato/" target="_blank">📋 Ficha de registro →</a>
+        <button class="ql-btn ql-navy" onclick="showSection('plantillas')">📚 Ver catálogo →</button>
+      </div>
+    </div>
   </section>
 
 </div><!-- /content -->
@@ -1036,11 +1163,17 @@ const mailPlantillas = [
   { num: 11, name: "Cancelación con saldo a favor", cuando: "Email formal comunicando la cancelación y el saldo reutilizable del cliente.", datos: "Nº de reserva, fechas, habitación, monto del saldo a favor.", nota: "Vigencia del saldo: 1 año. Sobre tarifa rack o promo vigente al momento del uso." }
 ];
 
+const PDF_GEN_URL = 'https://nawan-resort.github.io/generar-pdf/';
+const FICHA_URL   = 'https://nawan-resort.github.io/ficha-registro-contrato/';
+
 function buildList(containerId, items, tagType) {
   const container = document.getElementById(containerId);
   items.forEach((p, i) => {
     const div = document.createElement('div');
     div.className = 'plantilla-item';
+    const extraLink = tagType === 'pdf'
+      ? `<a class="p-tool-link" href="${PDF_GEN_URL}" target="_blank">📄 Abrir generador →</a>`
+      : '';
     div.innerHTML = `
       <button class="plantilla-trigger" onclick="togglePlantilla(this)">
         <div class="p-num">${p.num}</div>
@@ -1055,6 +1188,7 @@ function buildList(containerId, items, tagType) {
           <div class="p-row"><div class="p-label">Cuándo usarla</div><div class="p-value">${p.cuando}</div></div>
           <div class="p-row"><div class="p-label">Datos a completar</div><div class="p-value">${p.datos}</div></div>
           <div class="p-note">${p.nota}</div>
+          ${extraLink}
         </div>
       </div>`;
     container.appendChild(div);
